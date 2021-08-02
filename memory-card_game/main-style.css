@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: tomato; 
+}
+
+.game-body{
+    margin: 3em .8em;
+}
+
+.memory-game {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 10px;
+    width: 300px;
+    height: 400px;
+}
+
+.memory-card {
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform  .2;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+    
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    background:#fff;
+    position: absolute;
+    border-radius: 20px; 
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+    
+}
+
+p {
+    color: cornsilk;
+    font-family: 'Robo Mono', monospace;
+    text-align: center; 
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin: 1em 0;
+}
+
+/* ==========================================================================
+        Small tablet 480px
+       ========================================================================== */
+
+
+
+@media only screen and (min-width: 480px) {
+
+.game-body{
+    margin: 3em .8em;
+}
+    
+.memory-game {
+    margin-left: 18%;
+    
+}
+
+p {
+    margin-top: 2rem;
+     font-size: 18px;
+  }
+
+}
+
+  /* ==========================================================================
+        Ipad view 768px
+       ========================================================================== */
+
+
+@media only screen and (min-width: 768px) {
+
+   
+.game-body{
+    margin-left: 5rem;
+}
+
+.memory-game {
+    margin-left: 20%;
+    width:  350px;
+    height: 450px;
+}
+
+p {
+      margin-top: 2rem;
+      margin-right: 3rem;
+       font-size: 18px;
+    }
+}
+
+  /* ==========================================================================
+        Desktop view 1024px
+       ========================================================================== */
+
+
+       @media only screen and (min-width: 1024px) {
+        
+    .game-body{
+        margin: 3em 20em;
+    }
+
+    .memory-game {
+        grid-gap: 10px;
+        width:  350px;
+        height: 450px;
+        margin-left: 13em;
+    }
+    
+    
+    p {
+       margin-top: 5rem;
+       font-size: 25px;
+    }
+    }
